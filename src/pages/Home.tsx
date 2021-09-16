@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
 
+import { GoogleAuthProvider } from "firebase/auth";
 import { auth, firebase } from "../services/firebase";
 
 import illustrationImg from "../assets/images/illustration.svg";
@@ -15,13 +16,15 @@ export function Home() {
 
   function singIn() {}
 
-  // function handleCreateRoom() {
-  //   const provider = new firebase.auth.GoogleAuthProvider();
+  function handleCreateRoom() {
+    // const provider = new firebase.default.auth.GoogleAuthProvider();
+    const provider = new GoogleAuthProvider();
 
-  //   // auth.singInWithPopup(provider).then(result => {});
-
-  //   history.push("/rooms/new");
-  // }
+    auth.signInWithPopup(provider).then((result) => {
+      console.log(result);
+      history.push("/rooms/new");
+    });
+  }
   return (
     <div id="page-auth">
       <aside>
