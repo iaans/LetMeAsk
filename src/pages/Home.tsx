@@ -1,15 +1,17 @@
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
-import { GoogleAuthProvider } from "firebase/auth";
-import { auth, firebase } from "../services/firebase";
+// import { GoogleAuthProvider } from "firebase/auth";
+// import { auth, firebase } from "../services/firebase";
 
-import illustrationImg from "../assets/images/illustration.svg";
-import logoImg from "../assets/images/logo.svg";
-import googleIconImg from "../assets/images/google-icon.svg";
+import illustrationImg from '../assets/images/illustration.svg';
+import logoImg from '../assets/images/logo.svg';
+import googleIconImg from '../assets/images/google-icon.svg';
 
-import { Button } from "../components/Button";
+import { Button } from '../components/Button';
 
-import "../styles/auth.scss";
+import { firebase, auth } from '../services/firebase';
+
+import '../styles/auth.scss';
 
 export function Home() {
   const history = useHistory();
@@ -17,13 +19,12 @@ export function Home() {
   function singIn() {}
 
   function handleCreateRoom() {
-    // const provider = new firebase.default.auth.GoogleAuthProvider();
-    const provider = new GoogleAuthProvider();
+    const provider = new auth.GoogleAuthProvider();
 
-    auth.signInWithPopup(provider).then((result) => {
-      console.log(result);
-      history.push("/rooms/new");
-    });
+    // auth.signInWithPopup(provider).then((result) => {
+    //   console.log(result);
+    //   history.push('/rooms/new');
+    // });
   }
   return (
     <div id="page-auth">
