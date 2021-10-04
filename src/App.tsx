@@ -5,7 +5,7 @@ import { Home } from "./pages/Home";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter> 
       <Route path="/" exact component={Home} />
       <Route path="/rooms/new" component={NewRoom} />
     </BrowserRouter>
