@@ -12,6 +12,8 @@ import "../styles/auth.scss";
 export function NewRoom() {
   // const { user } = useContext(AuthContext);
 
+  async function handleCreateRoom(event) {}
+
   return (
     <div id="page-auth">
       <aside>
@@ -26,7 +28,7 @@ export function NewRoom() {
         <div className="main-content">
           <img src={logoImg} alt="Letmeask" />
           <h2>Criar uma nova sala</h2>
-          <form>
+          <form onSubmit={handleCreateRoom}>
             <input type="text" placeholder="Nome da sala" />
             <Button type="submit">Criar sala</Button>
           </form>
