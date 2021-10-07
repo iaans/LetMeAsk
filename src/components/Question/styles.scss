@@ -33,6 +33,10 @@
         font-size: 14px;
       }
     }
+    > div {
+      display: flex;
+      gap: 16px;
+    }
 
     button {
       border: 0;
