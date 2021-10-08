@@ -11,8 +11,8 @@ type FirebaseQuestions = Record<
       avatar: string;
     };
     content: string;
-    isAnswered: boolean;
     isHighlighted: boolean;
+    isAnswered: boolean;
     likes: Record<
       string,
       {
